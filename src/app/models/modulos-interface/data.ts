@@ -1,0 +1,3 @@
+interface Modulos {
+    name: string;
+}

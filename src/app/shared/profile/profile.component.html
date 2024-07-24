@@ -1,0 +1,48 @@
+<p-toast position="top-left"/>
+
+<div class="profile-container">
+    <div class="profile">
+
+        <div class="profile-description">
+            <div class="profile-name">
+                <p>Administrador</p>
+            </div>
+            <div class="profile-email">
+                <p>administrador2024.com.br</p>
+            </div>
+        </div>
+
+        <div class="profile-image">
+            <div class="profile-image-border">
+
+                <div class="dropdown">
+
+                    <button type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://i.pinimg.com/236x/4c/20/2b/4c202b6376037a5fc660a6c7b6e55661.jpg" class="profile-image-img" alt="imagem">
+                    </button>
+
+                    <ul class="dropdown-menu mt-2" aria-labelledby="dropdownMenuButton2">
+
+                      <li><a class="dropdown-item item-setting" id="dropdown-setting">
+                            <span><i class="fa-solid fa-gear" id="icone-setting"></i></span>
+                            <span>Configurações</span>
+                      </a></li>
+
+                      <li (click)="exit()"><a class="dropdown-item" id="dropdown-exit">
+                            <span><i class="fa-solid fa-arrow-right-from-bracket" id="icone"></i></span>
+                            <span>Sair</span>
+                      </a></li>
+
+                    </ul>
+
+                  </div>
+
+
+            </div>
+
+            
+              
+        </div>
+
+    </div>
+</div>

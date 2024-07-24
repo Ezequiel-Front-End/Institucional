@@ -1,0 +1,23 @@
+.title {
+    h4 {
+        color: var(--text-color);
+    }
+}
+
+.painel {
+    margin-top: 1rem;
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0rem 2rem;
+    background: var(--background-painel);
+    border-radius: 5px;
+
+    p {
+        margin-top: 0.60rem;
+        color: var(--text-color-primary);
+        font-size: 15pt;
+    }
+}

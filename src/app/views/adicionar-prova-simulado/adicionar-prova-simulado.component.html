@@ -1,0 +1,201 @@
+<div class="title">
+    <h4>Adicionar Prova / Simulados</h4>
+</div>
+
+<div class="row">
+    <form id="myForm">
+        <div class="row">
+            <div class="col-lg-6">
+                <input class="form-input" type="text" placeholder="Nome">
+            </div>
+            <div class="col-lg-6">
+                <input class="form-input" type="text" placeholder="Número de Questões">
+            </div>
+        </div>
+
+        <div class="row mt-3 container-options-prova-simulado">
+
+            <div class="checkbox">
+                <input type="checkbox" class="theme-checkbox">
+                <span>Calcular Tempo de Resposta</span>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" class="theme-checkbox">
+                <span>Troca de Resposta</span>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" class="theme-checkbox">
+                <span>Correção imediata</span>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" class="theme-checkbox">
+                <span>Cronômetro</span>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" class="theme-checkbox">
+                <span>Prova / Simulado</span>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" class="theme-checkbox">
+                <span>Tempo</span>
+                <div class="time" (click)="showDialog()">
+                    <span>00</span>
+                    <span>:</span>
+                    <span>00</span>
+                    <span>:</span>
+                    <span>00</span>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="row mt-3">
+
+            <div class="col-lg-10">
+                <select class="form-select input-selected" aria-placeholder="dsa">
+                    <option selected>Modulo</option>
+                    <option value="1">Português</option>
+                    <option value="2">Geografia</option>
+                    <option value="3">Matematica</option>
+                </select>
+            </div>
+            <div class="col-lg-2">
+                <div class="btn-button-add">
+                    <button>
+                        <span>Adicionar</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container mt-3" style="display: flex; align-items: center;">
+
+            <div class="card">
+
+                <div class="card-details">
+                    <div class="card-title">
+                        <p>Módulo de Português</p>
+                    </div>
+                    <div class="card-close">
+                        <span class="icon-close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="card-container">
+
+
+
+                    <div *ngFor="let card of currentCards" class="card">
+
+                        <div class="item-tema">
+                            <div class="tema mb-3">
+                                <div class="tema-description">
+                                    <input type="checkbox" class="theme-checkbox">
+                                    <span>Tema 01</span>
+                                </div>
+                                <div class="tema-porcentagem">
+                                    <span>5%</span>
+                                </div>
+                            </div>
+
+                            <div class="tema mb-3">
+                                <div class="tema-description">
+                                    <input type="checkbox" class="theme-checkbox">
+                                    <span>Tema 01</span>
+                                </div>
+                                <div class="tema-porcentagem">
+                                    <span>5%</span>
+                                </div>
+                            </div>
+
+                            <div class="tema">
+                                <div class="tema-description">
+                                    <input type="checkbox" class="theme-checkbox">
+                                    <span>Tema 01</span>
+                                </div>
+                                <div class="tema-porcentagem">
+                                    <span>5%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="pagination">
+
+                    <button class="pagination-button" (click)="prevPage()" [disabled]="currentPage === 1">
+                        <span>
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </span>
+                    </button>
+                    <span id="page-info">Tema {{ currentPage }} de {{ totalPages }}</span>
+                    <button class="pagination-button" (click)="nextPage()" [disabled]="currentPage === totalPages">
+                        <span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row mt-3">
+
+            <div class="btns">
+                <div class="btn-porcentagem">
+                    <button>
+                        <span>Percentual restante: 80%</span>
+                    </button>
+                </div>
+
+                <div class="btn-submit">
+                    <button>
+                        <span>Cancelar</span>
+                    </button>
+
+                    <button>
+                        <span>Salvar</span>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+</div>
+
+<p-dialog header="Selecionar tempo" [modal]="true" [(visible)]="visible" [style]="{ width: 'auto' }">
+    <div class="time-selector">
+        <label for="hours">Horas:</label>
+        <select id="hours" [(ngModel)]="selectedHour">
+            <option *ngFor="let hour of hours" [value]="hour">{{ hour }}</option>
+        </select>
+
+        <label for="minutes">Minutos:</label>
+        <select id="minutes" [(ngModel)]="selectedMinute">
+            <option *ngFor="let minute of minutes" [value]="minute">{{ minute }}</option>
+        </select>
+
+        <label for="seconds">Segundos:</label>
+        <select id="seconds" [(ngModel)]="selectedSecond">
+            <option *ngFor="let second of seconds" [value]="second">{{ second }}</option>
+        </select>
+
+        <div class="btn">
+            <button (click)="getTime()">Obter Tempo</button>
+        </div>
+
+    </div>
+</p-dialog>
