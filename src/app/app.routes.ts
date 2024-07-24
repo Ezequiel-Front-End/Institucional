@@ -8,6 +8,7 @@ import { ModulosTemasComponent } from './views/modulos-temas/modulos-temas.compo
 import { QuestoesComponent } from './views/questoes/questoes.component';
 import { HistoricosComponent } from './views/historicos/historicos.component';
 import { AdicionarProvaSimuladoComponent } from './views/adicionar-prova-simulado/adicionar-prova-simulado.component';
+import { PreTesteComponent } from './views/pre-teste/pre-teste.component';
 
 export const routes: Routes = [
     { path: "", component: DashboardComponent },
@@ -20,4 +21,5 @@ export const routes: Routes = [
     { path: "enunciados", component: QuestoesComponent },
     { path: "historico", component: HistoricosComponent },
     { path: "adicionar", component: AdicionarProvaSimuladoComponent },
+    { path: "pre-teste", component: PreTesteComponent }
 ];

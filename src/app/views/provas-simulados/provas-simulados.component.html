@@ -42,7 +42,7 @@
         </button>
 
         <mat-menu #menu="matMenu">
-          <button mat-menu-item>Pré teste</button>
+          <button mat-menu-item (click)="insertPreTeste()">Pré teste</button>
           <button mat-menu-item>Editar</button>
           <button (click)="showModalDelete()" mat-menu-item>Deletar</button>
         </mat-menu>

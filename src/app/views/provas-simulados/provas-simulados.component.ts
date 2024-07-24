@@ -32,7 +32,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-provas-simulados',
   standalone: true,
-  imports: [NgFor, DialogModule, NgClass, RouterLink, CommonModule, MatTableModule, MatPaginatorModule, MatButtonModule, MatMenuModule],
+  imports: [NgFor, DialogModule, NgClass, RouterLink, CommonModule, MatTableModule, MatPaginatorModule, MatButtonModule, MatMenuModule, RouterLink],
   templateUrl: './provas-simulados.component.html',
   styleUrl: './provas-simulados.component.scss'
 })
@@ -85,6 +85,11 @@ export class ProvasSimuladosComponent  implements AfterViewInit {
 
   add() {
         this._router.navigate(["adicionar"]);
+  }
+
+  insertPreTeste() {
+    this._router.navigate(["pre-teste"]);
+    
   }
 
 }
