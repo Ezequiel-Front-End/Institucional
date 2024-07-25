@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { data } from './data/nav-data';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NgFor } from '@angular/common';
+import { NgClass, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-sidenav',

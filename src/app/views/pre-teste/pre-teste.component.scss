@@ -1,0 +1,129 @@
+#quiz-container {
+    height: auto;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+
+    .question-text {
+        height: auto;
+        width: 100%;
+        color: var(--text-color);
+        text-align: justify;
+        font-size: 14pt;
+        margin-top: 0.50rem;
+    }
+
+    .quetion-title {
+        height: auto;
+        width: 100%;
+        color: var(--text-color);
+        text-align: justify;
+        font-size: 20pt;
+        font-weight: 500;
+        margin-top: 0.50rem;
+    }
+
+    .question-response {
+
+        .response {
+            height: auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1rem;
+            margin-top: 10px;
+
+            .text-alternative {
+                margin-top: 1rem;
+                font-size: 11pt;
+                font-weight: 500;
+                color: var(--text-color);
+            }
+
+
+            .btn-alternative {
+                height: 30px;
+                width: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid var(--text-color);
+                border-radius: 50%;
+                transition: all 0.1s ease;
+
+                &:hover {
+                    background: #2e4472;
+                    cursor: pointer;
+
+                    span {
+                        color: var(--background-secundary);
+                    }
+                }
+
+                span {
+                    font-size: 11pt;
+                    color: var(--text-color);
+                }
+            }
+        }
+
+    }
+}
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary);
+    color: var(--background-secundary);
+
+    span {
+        font-size: 11pt;
+        font-weight: 400;
+    }
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.container .header {
+    height: auto;
+    padding: 1.5050rem 0em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .icon-back {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid var(--text-color);
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        span i {
+            font-size: 11pt;
+            color: var(--text-color);
+        }
+    }
+
+
+
+}

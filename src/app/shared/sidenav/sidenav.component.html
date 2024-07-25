@@ -11,7 +11,7 @@
     <ul class="nav-list">
 
       <li *ngFor="let item of navData">
-        <a routerLink="{{ item.routerLink }}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a routerLink="{{ item.routerLink }}" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
           <i class="{{ item.icon }}" style="font-size: 20px;"></i>
           <span class="link_name">{{ item.routerName }}</span>
         </a>

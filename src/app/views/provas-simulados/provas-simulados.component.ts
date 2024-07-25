@@ -1,4 +1,4 @@
-import { NgClass, NgFor } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { DialogModule } from 'primeng/dialog';
@@ -11,6 +11,7 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 
 import { MatInputModule } from '@angular/material/input';
+import { LoadingComponent } from '../../shared/loading/loading.component';
 export interface PeriodicElement {
   id: any;
   date_create: any;
@@ -33,12 +34,14 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-provas-simulados',
   standalone: true,
-  imports: [NgFor, DialogModule, NgClass, RouterLink, CommonModule, MatTableModule, MatPaginatorModule, MatButtonModule, MatMenuModule, RouterLink, MatInputModule],
+  imports: [NgFor, DialogModule, NgClass, RouterLink, CommonModule, MatTableModule, MatPaginatorModule, MatButtonModule, MatMenuModule, RouterLink, MatInputModule, LoadingComponent, NgIf],
   templateUrl: './provas-simulados.component.html',
   styleUrl: './provas-simulados.component.scss'
 })
 
 export class ProvasSimuladosComponent implements AfterViewInit {
+
+  loading: boolean = false;
 
   displayedColumns: string[] = ['data_criacao', 'nome', 'tipo', 'quantidade', 'setting'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
@@ -90,7 +93,12 @@ export class ProvasSimuladosComponent implements AfterViewInit {
   }
 
   insertPreTeste() {
-    this._router.navigate(["pre-teste"]);
+    this.loading = true;
+
+    setTimeout(() => {
+      this._router.navigate(["pre-teste"]);
+
+    }, 1000)
 
   }
 

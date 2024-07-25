@@ -1,1 +1,52 @@
-<p>pre-teste works!</p>
+<app-loading  *ngIf="loading"/>
+
+<div class="container">
+
+    <div class="header">
+
+        <div class="icon-back" (click)="backPage()">
+            <span><i class="fa-solid fa-arrow-left"></i></span>
+        </div>
+
+
+        <div class="time-block">
+            <div class="time">
+                <span class="hh">00</span>
+                <span class="hh">:</span>
+                <span class="min">00</span>
+                <span class="min">:</span>
+                <span class="ss">00</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="content">
+        <div id="quiz-container">
+            <div *ngFor="let item of items; let i = index" [hidden]="currentPage !== i">
+
+                <div class="quetion-title">
+                    <p>Questão {{ i + 1 }}</p>
+                </div>
+
+                <div class="question-text">
+                    <p>{{ item.text }}</p>
+                </div>
+
+                <div class="question-response">
+                    <div class="response" *ngFor="let item of item.response">
+                        <div class="btn-alternative"><span>{{ item.alternative }}</span></div>
+                        <p class="text-alternative">{{ item.description }}</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="pagination">
+                <button (click)="changePage(-1)" [disabled]="currentPage === 0"><span>Anterior</span></button>
+                <button (click)="changePage(1)" [disabled]="currentPage === items.length - 1"><span>Próximo</span></button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
