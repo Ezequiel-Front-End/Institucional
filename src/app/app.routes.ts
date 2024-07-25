@@ -22,4 +22,5 @@ export const routes: Routes = [
     { path: "historico", component: HistoricosComponent },
     { path: "adicionar", component: AdicionarProvaSimuladoComponent },
     { path: "pre-teste", component: PreTesteComponent }
+
 ];

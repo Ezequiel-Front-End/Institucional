@@ -143,3 +143,37 @@
     color: var(--background-primary);
     cursor: pointer;
 }
+
+table {
+    width: 100%;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+#btn-menu {
+    border: none;
+    outline: none;
+    height: auto;
+    width: 40px;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    background: transparent;
+
+    span {
+        font-size: 12pt;
+        font-weight: 600;
+    }
+}
+
+#input-container {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    border-radius: 50%;
+    height: auto;
+    width: 300px;
+}
