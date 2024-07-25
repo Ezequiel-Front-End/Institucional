@@ -75,6 +75,17 @@ export class AlunosComponent {
 
   }
 
+  routerHistorioAluno() {
+    this.visible = false;
+    this.loading = true;
+
+    setTimeout(() => {
+      this._router.navigate(["historico-aluno"])
+
+    }, 1500);
+
+  }
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

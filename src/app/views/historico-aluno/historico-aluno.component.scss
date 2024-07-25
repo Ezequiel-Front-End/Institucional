@@ -1,0 +1,30 @@
+.container .header {
+    height: auto;
+    padding: 1.5050rem 0em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .icon-back {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid var(--text-color);
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        span i {
+            font-size: 11pt;
+            color: var(--text-color);
+        }
+    }
+
+
+
+}

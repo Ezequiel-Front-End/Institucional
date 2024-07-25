@@ -10,6 +10,7 @@ import { HistoricosComponent } from './views/historicos/historicos.component';
 import { AdicionarProvaSimuladoComponent } from './views/adicionar-prova-simulado/adicionar-prova-simulado.component';
 import { PreTesteComponent } from './views/pre-teste/pre-teste.component';
 import { MainComponent } from './views/main/main.component';
+import { HistoricoAlunoComponent } from './views/historico-aluno/historico-aluno.component';
 
 export const routes: Routes = [
     {
@@ -28,6 +29,7 @@ export const routes: Routes = [
         ]
     },
 
-    { path: "pre-teste", component: PreTesteComponent }
+    { path: "pre-teste", component: PreTesteComponent },
+    { path: "historico-aluno", component: HistoricoAlunoComponent }
 
 ];

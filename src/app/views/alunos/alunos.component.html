@@ -1,3 +1,5 @@
+<app-loading  *ngIf="loading" />
+
 <div class="title">
     <h4>Alunos</h4>
 </div>
@@ -113,7 +115,7 @@
                                 <span>Fechar</span>
                             </button>
 
-                            <button>
+                            <button (click)="routerHistorioAluno()">
                                 <span>Histórico</span>
                             </button>
                         </div>
