@@ -9,18 +9,25 @@ import { QuestoesComponent } from './views/questoes/questoes.component';
 import { HistoricosComponent } from './views/historicos/historicos.component';
 import { AdicionarProvaSimuladoComponent } from './views/adicionar-prova-simulado/adicionar-prova-simulado.component';
 import { PreTesteComponent } from './views/pre-teste/pre-teste.component';
+import { MainComponent } from './views/main/main.component';
 
 export const routes: Routes = [
-    { path: "", component: DashboardComponent },
-    { path: "dashboard", component: DashboardComponent },
-    { path: "provas-simulados", component: ProvasSimuladosComponent },
-    { path: "alunos", component: AlunosComponent },
-    { path: "turmas", component: TurmasComponent },
-    { path: "professores", component: ProfessoresComponent },
-    { path: "modulos-tema", component: ModulosTemasComponent },
-    { path: "enunciados", component: QuestoesComponent },
-    { path: "historico", component: HistoricosComponent },
-    { path: "adicionar", component: AdicionarProvaSimuladoComponent },
+    {
+        path: "", component: MainComponent,
+        children: [
+            { path: "", component: DashboardComponent },
+            { path: "dashboard", component: DashboardComponent },
+            { path: "provas-simulados", component: ProvasSimuladosComponent },
+            { path: "alunos", component: AlunosComponent },
+            { path: "turmas", component: TurmasComponent },
+            { path: "professores", component: ProfessoresComponent },
+            { path: "modulos-tema", component: ModulosTemasComponent },
+            { path: "enunciados", component: QuestoesComponent },
+            { path: "historico", component: HistoricosComponent },
+            { path: "adicionar", component: AdicionarProvaSimuladoComponent }
+        ]
+    },
+
     { path: "pre-teste", component: PreTesteComponent }
 
 ];
