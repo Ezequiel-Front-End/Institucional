@@ -56,18 +56,6 @@ export class ProvasSimuladosComponent implements AfterViewInit {
 
   isButtonDisabled: boolean = true;
 
-  data: any = [
-    { "data_criacao": "26/02/2004", "nome": "Ezequiel", "tipo": "Prova", "quant": "74" },
-    { "data_criacao": "22/11/2023", "nome": "Jasmine", "tipo": "Simulado", "quant": "44" },
-    { "data_criacao": "10/12/2033", "nome": "Luís", "tipo": "Prova", "quant": "12" },
-    { "data_criacao": "26/02/2004", "nome": "Ezequiel", "tipo": "Prova", "quant": "74" },
-    { "data_criacao": "22/11/2023", "nome": "Jasmine", "tipo": "Simulado", "quant": "44" },
-    { "data_criacao": "10/12/2033", "nome": "Luís", "tipo": "Prova", "quant": "12" },
-    { "data_criacao": "26/02/2004", "nome": "Ezequiel", "tipo": "Prova", "quant": "74" },
-    { "data_criacao": "22/11/2023", "nome": "Jasmine", "tipo": "Simulado", "quant": "44" },
-    { "data_criacao": "10/12/2033", "nome": "Luís", "tipo": "Prova", "quant": "12" }
-  ];
-
   visible: boolean = false;
 
   showModalDelete() {
