@@ -72,7 +72,7 @@ export class AlunosComponent {
   closeModal() {
     this.visible = false;
     this.content = false;
-    
+
   }
 
   applyFilter(event: Event) {
