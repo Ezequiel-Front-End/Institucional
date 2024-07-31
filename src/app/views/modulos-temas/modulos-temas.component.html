@@ -2,6 +2,10 @@
     <h4>Modúlos / Tema</h4>
 </div>
 
+<div class="row">
+    <input type="file" (change)="ReadExcel($event)">
+</div>
+
 <form id="myForm" class="mt-5">
     <div class="container">
 
@@ -42,3 +46,5 @@
     </div>
 
 </form>
+
+{{ ExcelData | json }}
