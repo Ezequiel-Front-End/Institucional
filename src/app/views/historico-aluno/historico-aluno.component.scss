@@ -28,3 +28,157 @@
 
 
 }
+
+.container .card-placeholder {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    border-radius: .8rem;
+    margin-top: 1rem;
+
+
+    .card__skeleton {
+        background-image: linear-gradient(90deg,
+                #ccc 0px,
+                rgb(229 229 229 / 90%) 40px,
+                #ccc 80px);
+        background-size: 300%;
+        background-position: 100% 0;
+        border-radius: inherit;
+        animation: shimmer 1.5s infinite;
+    }
+
+    .card__title {
+        height: 20px;
+        margin-bottom: 15px;
+    }
+
+    .card__photo {
+        height: 100px;
+        border-radius: 50%;
+        width: 100px;
+        margin-bottom: 15px;
+    }
+
+
+    .card__description {
+        border-radius: .5rem;
+        height: 25px;
+    }
+
+    @keyframes shimmer {
+        to {
+            background-position: -100% 0;
+        }
+    }
+
+}
+
+.row {
+
+    .input-complte {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .label {
+        font-size: 11pt;
+        font-weight: 500;
+    }
+
+    .form-input {
+        height: auto;
+        width: 100%;
+        padding: 0.50rem;
+        border-radius: 5px;
+        outline: none;
+        background: var(--background-secundary);
+        border: 1px solid var(--text-color-primary);
+        color: var(--text-color-primary);
+        font-size: 11pt;
+
+        &::placeholder {
+            color: var(--text-color-primary);
+
+        }
+    }
+}
+
+.row .btns {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .btn-submit {
+        button {
+            outline: none;
+            height: auto;
+            width: auto;
+            padding: 0.50rem 1.90rem;
+            border-radius: 5px;
+            border: 1px solid var(--primary);
+            background: var(--primary);
+            transition: all 0.3s ease;
+
+            span {
+                font-size: 11pt;
+                font-weight: 500;
+                color: var(--background-secundary);
+            }
+        }
+
+    }
+
+}
+
+.row {
+
+    .label {
+        font-size: 9pt;
+        font-weight: 500;
+    }
+
+}
+
+.row .profile-image {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 160px;
+    width: 160px;
+    background: var(--segundary);
+
+    img {
+        border-radius: 50%;
+        height: 150px;
+        width: 150px;
+    }
+}
+
+.container .profile {
+    .phofile-description {
+        padding-top: 1rem;
+        height: 100px;
+        width: 100%;
+        line-height: 10px;
+
+        p:nth-of-type(1) {
+            margin-top: 2rem;
+            font-weight: 500;
+            color: var(--text-color);
+            font-size: 20pt;
+        }
+
+        p:nth-of-type(2) {
+            font-weight: 500;
+            color: var(--text-color-primary);
+            font-size: 11pt;
+        }
+    }
+}

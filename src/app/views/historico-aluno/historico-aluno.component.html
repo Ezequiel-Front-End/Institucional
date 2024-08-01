@@ -1,13 +1,164 @@
-<app-loading  *ngIf="loading"/>
+<app-loading *ngIf="loading" />
 
 <div class="container">
 
+
     <div class="header">
 
-        <div class="icon-back" (click)="backPage()">
+        <div class="icon-back" (click)="backPage()" style="margin-left: 0.80rem;">
             <span><i class="fa-solid fa-arrow-left"></i></span>
         </div>
 
+    </div>
+
+
+</div>
+
+<div class="container">
+
+    <div class="card-placeholder" *ngIf="placeholder">
+        <div class="card__skeleton card__photo"></div>
+
+        <div class="row mt-3">
+            <div class="col-lg-6">
+                <div class="card__skeleton card__description"></div>
+
+            </div>
+            <div class="col-lg-6">
+                <div class="card__skeleton card__description"></div>
+
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-lg-6">
+                <div class="card__skeleton card__description"></div>
+
+            </div>
+            <div class="col-lg-6">
+                <div class="card__skeleton card__description"></div>
+
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-lg-6">
+                <div class="card__skeleton card__description"></div>
+
+            </div>
+            <div class="col-lg-6">
+                <div class="card__skeleton card__description"></div>
+
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-lg-6">
+                <div class="card__skeleton card__description"></div>
+
+            </div>
+            <div class="col-lg-6">
+                <div class="card__skeleton card__description"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card-form-historic" *ngIf="content">
+        <form id="myForm" class="mt-5">
+            <div class="container">
+
+                <div class="profile">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="profile-image">
+                                <img src="https://i.pinimg.com/236x/4c/20/2b/4c202b6376037a5fc660a6c7b6e55661.jpg" class="profile-image-img" alt="imagem">
+                            </div>
+                        </div>
+                        <div class="col-lg-10">
+                            <div class="phofile-description">
+                                <p>Aluno do Admiinstrador</p>
+                                <p>Administrador.com.br</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <span class="label">Nome</span>
+                        <input type="text" class="form-input">
+                    </div>
+
+                    <div class="col-lg-6">
+                        <span class="label">Email</span>
+                        <input type="text" class="form-input">
+                    </div>
+
+                </div>
+
+                <div class="row mt-3">
+
+                    <div class="col-lg-6">
+                        <span class="label">Idade</span>
+                        <input type="text" class="form-input">
+                    </div>
+
+                    <div class="col-lg-6">
+                        <span class="label">Telefone</span>
+                        <input type="text" class="form-input">
+                    </div>
+
+                </div>
+
+                <div class="row mt-3">
+
+                    <div class="col-lg-6">
+                        <span class="label">Cursos</span>
+                        <input type="text" class="form-input">
+                    </div>
+
+                    <div class="col-lg-6">
+                        <span class="label">Endereço</span>
+                        <input type="text" class="form-input">
+                    </div>
+
+                </div>
+
+                <div class="row mt-3">
+
+                    <div class="col-lg-6">
+                        <span class="label">CEP</span>
+                        <input type="text" class="form-input">
+                    </div>
+
+                    <div class="col-lg-6">
+                        <span class="label">Complemento</span>
+                        <input type="text" class="form-input">
+                    </div>
+
+                </div>
+
+                <div class="row mt-3">
+
+                    <div class="btns">
+
+                        <div class="btn-submit">
+
+                            <button>
+                                <span>Salvar Histórico</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </form>
     </div>
 
 </div>
