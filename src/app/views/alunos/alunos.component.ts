@@ -9,6 +9,10 @@ import { Router, RouterLink } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatInputModule } from '@angular/material/input';
 
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { MatPaginatorIntlPt } from '../../config/config-table';
+
+
 export interface PeriodicElement {
   codigo: any;
   aluno: any;
@@ -31,6 +35,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   selector: 'app-alunos',
   standalone: true,
   imports: [NgFor, DialogModule, NgClass, CommonModule, MatTableModule, MatPaginatorModule, MatButtonModule, MatMenuModule, RouterLink, MatInputModule, LoadingComponent, NgIf],
+  providers: [{ provide: MatPaginatorIntl, useClass: MatPaginatorIntlPt }],
   templateUrl: './alunos.component.html',
   styleUrl: './alunos.component.scss'
 })

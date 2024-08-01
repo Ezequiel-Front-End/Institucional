@@ -12,6 +12,11 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 
 import { MatInputModule } from '@angular/material/input';
 import { LoadingComponent } from '../../shared/loading/loading.component';
+
+
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { MatPaginatorIntlPt } from '../../config/config-table';
+
 export interface PeriodicElement {
   id: any;
   date_create: any;
@@ -35,6 +40,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   selector: 'app-provas-simulados',
   standalone: true,
   imports: [NgFor, DialogModule, NgClass, RouterLink, CommonModule, MatTableModule, MatPaginatorModule, MatButtonModule, MatMenuModule, RouterLink, MatInputModule, LoadingComponent, NgIf],
+  providers: [{ provide: MatPaginatorIntl, useClass: MatPaginatorIntlPt }],
   templateUrl: './provas-simulados.component.html',
   styleUrl: './provas-simulados.component.scss'
 })
@@ -77,7 +83,7 @@ export class ProvasSimuladosComponent implements AfterViewInit {
   }
 
   add() {
-    this._router.navigate(["adicionar"]);
+    this._router.navigate(["adicionar-prova-simulado"]);
   }
 
   insertPreTeste() {

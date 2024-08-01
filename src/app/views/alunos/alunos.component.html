@@ -1,4 +1,4 @@
-<app-loading  *ngIf="loading" />
+<app-loading *ngIf="loading" />
 
 <div class="title">
     <h4>Alunos</h4>
@@ -6,10 +6,12 @@
 
 <div class="card mt-4">
 
-    <mat-form-field id="input-container">
-        <mat-label>Buscar</mat-label>
-        <input matInput (keyup)="applyFilter($event)" id="input" #input>
-    </mat-form-field>
+    <div id="input-container">
+        <div class="input-filter">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input matInput (keyup)="applyFilter($event)" id="input" #input placeholder="Buscar...">
+        </div>
+    </div>
 
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="box-shadow: none;">
 
@@ -57,8 +59,9 @@
     </table>
 
     <div id="paginator"
-        style="height: auto; width: 100%; display: flex; align-items: center; justify-content: center; margin-top: 1rem;">
-        <mat-paginator [pageSizeOptions]="[3, 6, 9]" showFirstLastButtons aria-label="Select page of periodic elements">
+        style="height: auto; width: 100%; display: flex; align-items: center; justify-content: center; margin-top: 1rem; background: var(--background-primary);">
+        <mat-paginator style="background: var(--background-primary);" [pageSizeOptions]="[3, 6, 9]" showFirstLastButtons
+            aria-label="Select page of periodic elements">
         </mat-paginator>
     </div>
 

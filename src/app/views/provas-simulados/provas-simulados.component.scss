@@ -144,10 +144,6 @@
     cursor: pointer;
 }
 
-table {
-    width: 100%;
-}
-
 .mat-mdc-form-field {
     font-size: 14px;
     width: 100%;
@@ -176,4 +172,54 @@ table {
     border-radius: 50%;
     height: auto;
     width: 300px;
+}
+
+table {
+    height: auto;
+    width: 100%;
+
+    th {
+        background: var(--background-primary);
+        font-size: 11pt;
+        color: var(--text-blue-dark);
+    }
+
+    td {
+        font-size: 11pt;
+        font-weight: 400;
+        color: var(--text-blue-dark);
+    }
+
+}
+
+.card #input-container .input-filter {
+    padding: 1rem;
+    border-radius: 50px;
+    height: auto;
+    width: 300px;
+    background: var(--background-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+
+    i {
+        font-size: 11pt;
+        color: var(--text-color);
+    }
+
+    input {
+        color: var(--text-color);
+        font-size: 11pt;
+        outline: none;
+        border: none;
+        background: transparent;
+        height: 25px;
+        width: 100%;
+    }
+}
+
+.card {
+    border: none;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.055);
 }
