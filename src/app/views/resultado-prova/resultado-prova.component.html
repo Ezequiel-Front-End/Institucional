@@ -1,0 +1,86 @@
+<app-loading *ngIf="loading" />
+
+<div class="container">
+
+    <div class="header">
+
+        <div class="icon-back" (click)="backPage()">
+            <span><i class="fa-solid fa-arrow-left"></i></span>
+        </div>
+
+        <div class="title">
+            <h4>Nome da prova</h4>
+        </div>
+    </div>
+
+    <div class="description">
+        <p>Confira os resultados!</p>
+        <ul>
+            <li><strong>Módulos:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit</li>
+            <li><strong>Temas:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit</li>
+            <li><strong>Tempo gasto:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit</li>
+            <li><strong>Total de acertos:</strong><span class="correct"> 9</span></li>
+            <li><strong>Total de erros:</strong><span class="wrong"> 1</span></li>
+            <li><strong>Porcentagens de acertos:</strong><span class="percentile"> 90%</span></li>
+        </ul>
+
+        <div class="content-note">
+            <div class="note">
+                <div>Nota</div>
+                <div>9</div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+
+        <div id="quiz-container">
+            <div *ngFor="let item of items; let i = index" [hidden]="currentPage !== i">
+
+                <div class="quetion-title">
+                    <p>Questão {{ i + 1 }}</p>
+                </div>
+
+                <div class="content-question"
+                    [ngClass]="{'correct': getAnswerStatus(i) === 'Correta', 'wrong': getAnswerStatus(i) === 'Errada'}">
+
+                    <div class="question-text">
+                        <p>{{ item.text }}</p>
+                    </div>
+
+                    <div class="question-response">
+                        <div class="response" *ngFor="let item of item.response">
+                            <div class="btn-alternative"
+                                [ngClass]="{'correct': item.alternative === userAnswers[i] && getAnswerStatus(i) === 'Correta', 'wrong': getAnswerStatus(i) === 'Errada' && item.alternative === userAnswers[i] }">
+                                <span>{{ item.alternative }}</span>
+                            </div>
+                            <p class="text-alternative">{{ item.description }}</p>
+                        </div>
+
+                        <div class="answer"
+                            [ngClass]="{'correct': getAnswerStatus(i) === 'Correta', 'wrong': getAnswerStatus(i) === 'Errada'}">
+                            <div><span style="color: #000;">Resposta: </span> {{ getAnswerStatus(i) }}</div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="showDropdown(i)" class="dropDown-answer-correct mt-3" (click)="toggleDropdown(i)">
+                        <div class="mt-3">Resposta correta</div>
+                        <div><i class="fa-solid fa-chevron-down" id="icon-arrow" [ngClass]="{'rotate-icon': dropdownVisible[i], 'no-rotate-icon': !dropdownVisible[i]}"></i></div>
+                    </div>
+
+                    <div *ngIf="dropdownVisible[i]" class="correct-answer">
+                        Respos correta é: {{ getCorrectAnswer(i) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button (click)="changePage(-1)" [disabled]="currentPage === 0"><span>Anterior</span></button>
+                <button (click)="changePage(1)"
+                    [disabled]="currentPage === items.length - 1"><span>Próximo</span></button>
+            </div>
+            
+        </div>
+
+    </div>
+
+</div>
