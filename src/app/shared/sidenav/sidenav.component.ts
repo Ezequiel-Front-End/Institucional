@@ -33,11 +33,22 @@ export class SidenavComponent {
       closeBtn.classList.replace("fa-xmark", "fa-bars");
 
       this.showDropdown = false;
+      this.resetArrow(); // Reseta a seta para baixo
+
     }
   }
 
   showListDropdown() {
     this.showDropdown = !this.showDropdown;
+    this.updateArrow(); // Atualiza a seta de acordo com o estado do dropdown
+  }
+
+  resetArrow() {
+    const iconArrow = document.getElementById("icon-arrow") as HTMLElement;
+    iconArrow.style.transform = 'rotate(0)';
+  }
+
+  updateArrow() {
     const iconArrow = document.getElementById("icon-arrow") as HTMLElement;
     iconArrow.style.transform = this.showDropdown ? 'rotate(-180deg)' : 'rotate(0)';
   }
