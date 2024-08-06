@@ -1,0 +1,112 @@
+.title {
+    h4 {
+        color: var(--text-color);
+    }
+}
+
+#btn-menu {
+    border: none;
+    outline: none;
+    height: auto;
+    width: 40px;
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    background: transparent;
+
+    span {
+        font-size: 12pt;
+        font-weight: 600;
+    }
+}
+
+::ng-deep #input-container {
+    position: relative;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    width: 350px;
+    height: 75px;
+
+    .mdc-text-field {
+        background-color: #fff;
+        border: 1px solid #dedede;
+        border-radius: 30px;
+        padding-left: 40px;
+    }
+
+    .mdc-text-field--focused .mdc-floating-label {
+        opacity: 0;
+    }
+
+    .mdc-line-ripple--active {
+        display: none;
+    }
+
+    #input {
+        height: 100%;
+        font-size: 1rem;
+        padding-left: 30px;
+    }
+
+    #input::placeholder {
+        color: rgba(0, 0, 0, 0.308);
+        opacity: 1;
+    }
+
+    .fa-magnifying-glass {
+        position: absolute;
+        top: 50%;
+        left: -15px;
+        transform: translateY(-50%);
+        font-size: 1.2rem;
+        color: rgba(0, 0, 0, 0.308);
+    }
+}
+
+.table-responsive th,
+.table-responsive td {
+    padding-left: 4.2rem;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px;
+}
+
+.table-responsive table {
+    width: 100%;
+    min-width: 600px;
+}
+
+@media (max-width: 768px) {
+    .table-responsive table {
+        min-width: 100%;
+        width: 100%;
+    }
+
+    mat-header-cell,
+    mat-cell {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    #input-container {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    ::ng-deep .mat-mdc-paginator-range-actions {
+        position: relative;
+    }
+}
+
+@media (max-width: 440px) {
+    ::ng-deep.mat-mdc-paginator-range-label {
+        position: absolute;
+        left: 50px;
+        top: 50px;
+    }
+}
