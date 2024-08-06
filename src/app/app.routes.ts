@@ -11,6 +11,8 @@ import { AdicionarProvaSimuladoComponent } from './views/adicionar-prova-simulad
 import { PreTesteComponent } from './views/pre-teste/pre-teste.component';
 import { MainComponent } from './views/main/main.component';
 import { HistoricoAlunoComponent } from './views/historico-aluno/historico-aluno.component';
+import { ProvasRealizadasComponent } from './views/provas-realizadas/provas-realizadas.component';
+import { ResultadoProvaComponent } from './views/resultado-prova/resultado-prova.component';
 
 export const routes: Routes = [
     {
@@ -25,7 +27,10 @@ export const routes: Routes = [
             { path: "modulos-tema", component: ModulosTemasComponent },
             { path: "enunciados", component: QuestoesComponent },
             { path: "historico", component: HistoricosComponent },
-            { path: "adicionar", component: AdicionarProvaSimuladoComponent }
+            { path: "adicionar", component: AdicionarProvaSimuladoComponent },
+            { path: "provas-realizadas", component: ProvasRealizadasComponent },
+            { path: "resultado-prova", component: ResultadoProvaComponent }, 
+
         ]
     },
 
