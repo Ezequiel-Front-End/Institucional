@@ -13,6 +13,10 @@ import { MainComponent } from './views/main/main.component';
 import { HistoricoAlunoComponent } from './views/historico-aluno/historico-aluno.component';
 import { ProvasRealizadasComponent } from './views/provas-realizadas/provas-realizadas.component';
 import { ResultadoProvaComponent } from './views/resultado-prova/resultado-prova.component';
+import { SimuladosRealizadosComponent } from './views/simulados-realizados/simulados-realizados.component';
+import { ResultadoSimuladoComponent } from './views/resultado-simulado/resultado-simulado.component';
+import { RegistrarProfessorComponent } from './views/registrar-professor/registrar-professor.component';
+import { PerfilProfessorComponent } from './views/perfil-professor/perfil-professor.component';
 
 export const routes: Routes = [
     {
@@ -30,7 +34,10 @@ export const routes: Routes = [
             { path: "adicionar", component: AdicionarProvaSimuladoComponent },
             { path: "provas-realizadas", component: ProvasRealizadasComponent },
             { path: "resultado-prova", component: ResultadoProvaComponent }, 
-
+            { path: "simulados-realizados", component: SimuladosRealizadosComponent }, 
+            { path: "resultado-simulado", component: ResultadoSimuladoComponent }, 
+            { path: "registrar-professor", component: RegistrarProfessorComponent }, 
+            { path: "perfil-professor", component: PerfilProfessorComponent }, 
         ]
     },
 
