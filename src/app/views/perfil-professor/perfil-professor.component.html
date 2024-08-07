@@ -1,0 +1,25 @@
+<div class="container">
+    <form>
+        <div class="row mt-5">
+            <div class="title">
+                <h2>Editar Perfil</h2>
+            </div>
+            <div class="photo-profile">
+                <img src="assets/images/photo-profile.png" id="photo"> <!-- depois trocar para {{photoBase64}}-->
+                <input type="file" id="file" formControlName="profile_photo" (change)="convertToBase64($event)"
+                    accept="image/png, image/jpeg">
+                <div class="dropdown">
+                    <label id="uploadbtn" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-camera"></i>
+                    </label>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item"><label for="file" (click)="editPhotoProfile()">Alterar
+                                    foto</label></a></li>
+                        <li><a class="dropdown-item"><label id="removebtn" (click)="removePhotoProfile()">Remover
+                                    foto</label></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
