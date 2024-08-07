@@ -10,7 +10,6 @@ import { MatInputModule } from '@angular/material/input';
 import { LoadingComponent } from '../../shared/loading/loading.component';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
-// import { createTheme } from '@angular/material/core';
 
 export interface PeriodicElement {
   data_realizacao: any;
@@ -93,7 +92,6 @@ export class ProvasRealizadasComponent {
     this.paginatorIntl.previousPageLabel = 'Página anterior';
     this.paginatorIntl.firstPageLabel = 'Primeira página';
     this.paginatorIntl.lastPageLabel = 'Última página';
-
   }
 
   isButtonDisabled: boolean = true;

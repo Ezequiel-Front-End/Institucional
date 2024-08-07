@@ -42,6 +42,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class ProvasSimuladosComponent implements AfterViewInit {
 
   loading: boolean = false;
+  placeholder: boolean = true;
+  content: boolean = false;
 
   displayedColumns: string[] = ['data_criacao', 'nome', 'tipo', 'quantidade', 'setting'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
@@ -77,7 +79,7 @@ export class ProvasSimuladosComponent implements AfterViewInit {
   }
 
   add() {
-    this._router.navigate(["adicionar"]);
+    this._router.navigate(["registrar-professor"]);
   }
 
   insertPreTeste() {
