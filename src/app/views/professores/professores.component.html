@@ -1,3 +1,179 @@
+<app-loading *ngIf="loading" />
+
 <div class="title">
     <h4>Professores</h4>
+</div>
+
+<div class="row btn-container">
+    <button class="btn-add-doc" (click)="registerTeacher()">
+        <span><i class="fa-solid fa-plus"></i></span>
+        <span>Adicionar Professor</span>
+    </button>
+</div>
+
+<div class="card mt-4">
+
+    <mat-form-field id="input-container">
+        <mat-label>Buscar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" id="input" #input>
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="box-shadow: none;">
+
+        <ng-container matColumnDef="codigo">
+            <th mat-header-cell *matHeaderCellDef> Código </th>
+            <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nome">
+            <th mat-header-cell *matHeaderCellDef> Nome </th>
+            <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="especialidade">
+            <th mat-header-cell *matHeaderCellDef> Especialidade </th>
+            <td mat-cell *matCellDef="let element"> {{element.especialidade}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="turma">
+            <th mat-header-cell *matHeaderCellDef> Turmas </th>
+            <td mat-cell *matCellDef="let element"> {{element.turma}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="setting">
+            <th mat-header-cell *matHeaderCellDef> <span style="margin-left: 0.35rem;"><i
+                        class="fa-solid fa-gear"></i></span> </th>
+            <td mat-cell *matCellDef="let element">
+
+                <button [matMenuTriggerFor]="menu" id="btn-menu">
+                    <span class="">⁝</span>
+                </button>
+
+                <mat-menu #menu="matMenu" id="dropDown-menu">
+                    <button style="text-align: center;" class="btn-menu" mat-menu-item (click)="showModalView()"><span
+                            style="font-size: 10pt;">Ver</span></button>
+                    <button style="text-align: center;" class="btn-menu" mat-menu-item><span
+                            style="font-size: 10pt;">Editar</span></button>
+                    <button style="text-align: center;" (click)="showModalDelete()" class="btn-menu" mat-menu-item><span
+                            style="font-size: 10pt;">Deletar</span></button>
+                </mat-menu>
+
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+        <tr class="mat-row" style="height: auto; width: 100%; text-align: center;" *matNoDataRow>
+            <td class="mat-cell" style="margin-top: 10px;" colspan="5">Informação não encontrada!</td>
+        </tr>
+
+
+    </table>
+
+    <div id="paginator"
+        style="height: auto; width: 100%; display: flex; align-items: center; justify-content: center; margin-top: 1rem;">
+        <mat-paginator [pageSizeOptions]="[3, 6, 9]" showFirstLastButtons aria-label="Select page of periodic elements">
+        </mat-paginator>
+    </div>
+
+</div>
+
+<div class="card flex justify-content-center">
+    <p-dialog [modal]="true" [(visible)]="visible" [style]="{ width: '50rem' }"
+        [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [maximizable]="false">
+
+        <div class="card-placeholder" style="display: block;">
+            <div class="card__skeleton card__photo"></div>
+            <div class="card__skeleton card__title mt-4"></div>
+            <div class="card__skeleton card__description"></div>
+            <div class="card__skeleton card__description mt-3"></div>
+            <div class="card__skeleton card__description mt-3"></div>
+        </div>
+
+        <div class="content" *ngIf="content">
+            <div class="header-phofile">
+                <div class="photo">
+                    <img src="https://i.pinimg.com/236x/4c/20/2b/4c202b6376037a5fc660a6c7b6e55661.jpg"
+                        class="profile-image-img" alt="imagem">
+                </div>
+
+                <div class="profile-description">
+                    <p>Nome do Professor</p>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <div class="row mt-4">
+                    <span class="label">Nome Completo</span>
+                    <input type="text" class="form-input" placeholder="nome completo">
+                </div>
+
+                <div class="row mt-3">
+                    <span class="label">E-mail</span>
+                    <input type="text" class="form-input" placeholder="e-mail">
+                </div>
+
+                <div class="row mt-3">
+                    <span class="label">Especialidade</span>
+                    <input type="text" class="form-input" placeholder="especialidade">
+                </div>
+
+                <div class="row mt-3">
+                    <span class="label">Formação Acadêmica</span>
+                    <input type="text" class="form-input" placeholder="formação acadêmica">
+                </div>
+
+                <div class="row mt-3">
+
+                    <div class="btns">
+
+                        <div class="btn-submit">
+                            <button>
+                                <span (click)="closeModalView()">Fechar</span>
+                            </button>
+
+                            <button>
+                                <span (click)="showTeacherProfile()">Editar</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </p-dialog>
+
+    <p-dialog header="Deseja mesmo excluir esse professor?" [modal]="true" [(visible)]="visibleDelete"
+        [style]="{ width: '50rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [maximizable]="false">
+
+        <div class="dialog-content">
+            <div class="dialog-content-message-error">
+                <p>Essa ação exclui permanentemente o cadastro do professor. Esta ação não pode ser desfeita.</p>
+            </div>
+
+            <div class="dialog-content-name">
+                <p>Nome do Professor</p>
+                <p>/nomeDoPofessor</p>
+            </div>
+
+            <div class="dialog-content-input">
+                <span>Insira o nome do professor para confirmar a exclusão dele: <strong>nomeDoPofessor</strong></span>
+                <input type="text" placeholder="Professor" (keyup)="disabledButton($event)">
+            </div>
+
+            <div class="dialog-content-btns">
+                <div class="btns">
+                    <button (click)="closeModalDelete()"><span>Cancelar</span></button>
+                    <button class="disabledButton" [ngClass]="isButtonDisabled ? 'disabled-class' : 'enabled-class'"
+                        [disabled]="isButtonDisabled"><span>Excluir</span></button>
+                </div>
+            </div>
+        </div>
+    </p-dialog>
+
 </div>
