@@ -1,16 +1,22 @@
 import { Component } from '@angular/core';
 import { environment } from '../../../environments/environment';
+import { Router } from '@angular/router';
+import { LoadingComponent } from "../../shared/loading/loading.component";
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-perfil-professor',
   standalone: true,
-  imports: [],
+  imports: [LoadingComponent, NgIf],
   templateUrl: './perfil-professor.component.html',
   styleUrl: './perfil-professor.component.scss'
 })
 export class PerfilProfessorComponent {
   photoBase64: string | null = null;
+  visible: boolean = true;
+  loading: boolean = false;
 
+  constructor(private _router: Router){}
 
   editPhotoProfile(): void {
     const img = document.querySelector("#photo") as HTMLImageElement | null;
@@ -54,5 +60,15 @@ export class PerfilProfessorComponent {
 
       reader.readAsDataURL(file);
     }
+  }
+
+  backPage() {
+    this.visible = false;
+    this.loading = true;
+
+    setTimeout(() => {
+      this._router.navigate(['professores'])
+    }, 1000);
+
   }
 }

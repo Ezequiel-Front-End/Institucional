@@ -1,9 +1,11 @@
+<app-loading *ngIf="loading" />
+
 <div class="container">
+    <div class="icon-back" (click)="backPage()">
+        <span><i class="fa-solid fa-arrow-left"></i></span>
+    </div>
     <form>
-        <div class="row mt-5">
-            <div class="title">
-                <h2>Editar Perfil</h2>
-            </div>
+        <div class="row mt-5 content-header">
             <div class="photo-profile">
                 <img src="assets/images/photo-profile.png" id="photo"> <!-- depois trocar para {{photoBase64}}-->
                 <input type="file" id="file" formControlName="profile_photo" (change)="convertToBase64($event)"
@@ -20,6 +22,47 @@
                     </ul>
                 </div>
             </div>
+
+            <div class="title">
+                <h4>Nome do professor</h4>
+            </div>
+            
+        </div>
+        <div class="form-content">
+            <div class="row">
+                <div class="col-md-6 field" id="textField">
+                    <label for="nome-complete">Nome completo</label>
+                    <input type="text" placeholder="Nome completo">
+                </div>
+                <div class="col-md-6 field">
+                    <label for="email">E-mail</label>
+                    <input type="text" placeholder="E-mail">
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6 field" id="textField">
+                    <label for="data-de-nascimento">Data de Nascimento</label>
+                    <input type="text" placeholder="Data de Nascimento">
+                </div>
+                <div class="col-md-6 field">
+                    <label for="especialidade">Especialidade</label>
+                    <input type="text" placeholder="Especialidade">
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6 field" id="textField">
+                    <label for="turma">Turma</label>
+                    <input type="text" placeholder="Turma">
+                </div>
+                <div class="col-md-6 field">
+                    <label for="formacao-academica">Formação acadêmica</label>
+                    <input type="text" placeholder="Formação acadêmica">
+                </div>
+            </div>
+        </div>
+        <div class="btn mt-4">
+            <button>Salvar</button>
         </div>
     </form>
 </div>
