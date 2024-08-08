@@ -36,7 +36,7 @@
         </ng-container>
 
         <ng-container matColumnDef="turma">
-            <th mat-header-cell *matHeaderCellDef> Turmas </th>
+            <th mat-header-cell *matHeaderCellDef> Turma </th>
             <td mat-cell *matCellDef="let element"> {{element.turma}} </td>
         </ng-container>
 
@@ -53,9 +53,10 @@
                     <button style="text-align: center;" class="btn-menu" mat-menu-item (click)="showModalView()"><span
                             style="font-size: 10pt;">Ver</span></button>
                     <button style="text-align: center;" class="btn-menu" mat-menu-item><span
-                            style="font-size: 10pt;">Editar</span></button>
+                            style="font-size: 10pt;" (click)="showTeacherProfile()">Editar</span></button>
                     <button style="text-align: center;" (click)="showModalDelete()" class="btn-menu" mat-menu-item><span
                             style="font-size: 10pt;">Deletar</span></button>
+
                 </mat-menu>
 
             </td>
@@ -95,7 +96,7 @@
         <div class="content" *ngIf="content">
             <div class="header-phofile">
                 <div class="photo">
-                    <img src="https://i.pinimg.com/236x/4c/20/2b/4c202b6376037a5fc660a6c7b6e55661.jpg"
+                    <img src="assets/images/photo-profile.png"
                         class="profile-image-img" alt="imagem">
                 </div>
 
@@ -119,6 +120,11 @@
                 <div class="row mt-3">
                     <span class="label">Especialidade</span>
                     <input type="text" class="form-input" placeholder="especialidade">
+                </div>
+
+                <div class="row mt-3">
+                    <span class="label">Turma</span>
+                    <input type="text" class="form-input" placeholder="turma">
                 </div>
 
                 <div class="row mt-3">
